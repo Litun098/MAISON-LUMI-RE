@@ -9,11 +9,13 @@ import { ProductSwatch } from "@/components/product-swatch";
 export default function CheckoutPage() {
   const { lines, subtotal, clear } = useCart();
   const [placed, setPlaced] = useState(false);
+  const [orderNo, setOrderNo] = useState("");
   const shipping = subtotal > 0 ? 0 : 0;
   const total = subtotal + shipping;
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setOrderNo(`ML-${Math.floor(100000 + Math.random() * 899999)}`);
     setPlaced(true);
     clear();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -30,9 +32,7 @@ export default function CheckoutPage() {
           A confirmation has been sent to your inbox. Each piece is now being
           prepared and wrapped by hand in our atelier.
         </p>
-        <p className="mt-2 text-sm text-stone">
-          Order no. ML-{Math.floor(100000 + Math.random() * 899999)}
-        </p>
+        <p className="mt-2 text-sm text-stone">Order no. {orderNo}</p>
         <Link
           href="/shop"
           className="mt-10 inline-block bg-ink px-9 py-4 transition-colors hover:bg-ink-soft"

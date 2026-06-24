@@ -47,7 +47,6 @@ export function SearchOverlay({
       >
         <div className="flex items-center gap-4 border-b border-ink pb-4">
           <SearchIcon />
-          {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
           <input
             autoFocus={open}
             value={query}

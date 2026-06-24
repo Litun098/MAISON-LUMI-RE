@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { Product, Category } from "@/lib/types";
 import { categories, allSizes, allColors } from "@/lib/products";
 import { ProductCard } from "./product-card";
@@ -45,32 +45,24 @@ export function ShopBrowser({
     setBand(0);
   }
 
-  const filtered = useMemo(() => {
-    const { min, max } = priceBands[band];
-    const result = allProducts.filter((p) => {
-      if (cats.length && !cats.includes(p.category)) return false;
-      if (sizes.length && !p.sizes.some((s) => sizes.includes(s))) return false;
-      if (colors.length && !p.colors.some((c) => colors.includes(c.name)))
-        return false;
-      if (p.price < min || p.price >= max) return false;
-      return true;
-    });
-    switch (sort) {
-      case "price-asc":
-        return [...result].sort((a, b) => a.price - b.price);
-      case "price-desc":
-        return [...result].sort((a, b) => b.price - a.price);
-      case "newest":
-        return [...result].sort(
-          (a, b) => Number(Boolean(b.isNew)) - Number(Boolean(a.isNew)),
-        );
-      default:
-        return [...result].sort(
-          (a, b) =>
-            Number(Boolean(b.isBestseller)) - Number(Boolean(a.isBestseller)),
-        );
-    }
-  }, [allProducts, cats, sizes, colors, band, sort]);
+  // The React Compiler memoizes this automatically — no manual useMemo needed.
+  const { min, max } = priceBands[band];
+  const matched = allProducts.filter((p) => {
+    if (cats.length && !cats.includes(p.category)) return false;
+    if (sizes.length && !p.sizes.some((s) => sizes.includes(s))) return false;
+    if (colors.length && !p.colors.some((c) => colors.includes(c.name)))
+      return false;
+    if (p.price < min || p.price >= max) return false;
+    return true;
+  });
+  const comparators: Record<Sort, (a: Product, b: Product) => number> = {
+    "price-asc": (a, b) => a.price - b.price,
+    "price-desc": (a, b) => b.price - a.price,
+    newest: (a, b) => Number(Boolean(b.isNew)) - Number(Boolean(a.isNew)),
+    featured: (a, b) =>
+      Number(Boolean(b.isBestseller)) - Number(Boolean(a.isBestseller)),
+  };
+  const filtered = [...matched].sort(comparators[sort]);
 
   const activeCount =
     cats.length + sizes.length + colors.length + (band > 0 ? 1 : 0);

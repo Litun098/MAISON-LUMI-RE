@@ -37,10 +37,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Reset menus when the route changes (intentional state reset).
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setMenuOpen(false);
     setMegaOpen(false);
   }, [pathname]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   return (
     <header

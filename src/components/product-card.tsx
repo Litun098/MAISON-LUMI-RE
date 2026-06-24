@@ -9,13 +9,7 @@ import { WishlistButton } from "./wishlist-button";
 import { useCart } from "./cart-context";
 import { useToast } from "./toast-context";
 
-export function ProductCard({
-  product,
-  priority,
-}: {
-  product: Product;
-  priority?: boolean;
-}) {
+export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
   const { notify } = useToast();
   const [activeColor, setActiveColor] = useState(product.colors[0]);
