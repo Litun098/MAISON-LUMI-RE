@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/products";
-import { ProductSwatch } from "./product-swatch";
+import { ProductImage } from "./product-image";
 import { useCart } from "./cart-context";
 import { useToast } from "./toast-context";
 import { Stars } from "./stars";
@@ -19,6 +19,7 @@ export function ProductDetail({ product }: { product: Product }) {
   const [qty, setQty] = useState(1);
   const [angle, setAngle] = useState(0);
   const [error, setError] = useState(false);
+  const isDefaultColor = color.name === product.colors[0].name;
 
   function add() {
     if (!size) {
@@ -36,12 +37,16 @@ export function ProductDetail({ product }: { product: Product }) {
     <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
       {/* gallery */}
       <div className="lg:sticky lg:top-28 lg:self-start">
-        <ProductSwatch
+        <ProductImage
           product={product}
+          index={angle}
+          showPhoto={isDefaultColor}
           swatch={color.swatch}
           accent={color.accent}
           label={color.name}
           seed={angle}
+          priority
+          sizes="(min-width: 1024px) 45vw, 100vw"
           className="aspect-[3/4] w-full"
         />
         <div className="mt-4 grid grid-cols-4 gap-3">
@@ -54,13 +59,16 @@ export function ProductDetail({ product }: { product: Product }) {
               }`}
               aria-label={`View ${s + 1}`}
             >
-              <ProductSwatch
+              <ProductImage
                 product={product}
+                index={s}
+                showPhoto={isDefaultColor}
                 swatch={color.swatch}
                 accent={color.accent}
                 monogram={false}
                 label=""
                 seed={s}
+                sizes="(min-width: 1024px) 11vw, 25vw"
                 className="aspect-square w-full"
               />
             </button>

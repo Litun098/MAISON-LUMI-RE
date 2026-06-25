@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SiteImage } from "@/components/site-image";
+import { SITE_IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "La Maison",
@@ -15,6 +17,13 @@ export default function AboutPage() {
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(160deg, #2c2a26, #1f2933 90%)" }}
+        />
+        <SiteImage
+          id={SITE_IMAGES.aboutHero}
+          alt="The hand of the maker in the atelier"
+          priority
+          sizes="100vw"
+          scrim="linear-gradient(180deg, rgba(20,20,22,0.3) 0%, rgba(20,20,22,0.35) 40%, rgba(20,20,22,0.75) 100%)"
         />
         <div className="relative mx-auto w-full max-w-4xl px-6 pb-16">
           <p className="eyebrow !text-paper/60">Since 1924</p>
@@ -56,19 +65,34 @@ export default function AboutPage() {
             {
               t: "The Cloth",
               d: "Sourced from heritage mills in Biella, Hawick and Osaka — natural fibres chosen for how they age, not merely how they look.",
+              img: SITE_IMAGES.aboutCloth,
             },
             {
               t: "The Hand",
               d: "A single tailor sees each garment from first cut to final press. Forty hours of work live inside our overcoat.",
+              img: SITE_IMAGES.aboutHand,
             },
             {
               t: "The Promise",
               d: "Lifetime repairs and alterations. We would rather mend a coat than sell its replacement.",
+              img: SITE_IMAGES.aboutPromise,
             },
           ].map((p) => (
-            <div key={p.t} className="bg-paper px-8 py-14">
-              <h3 className="font-serif text-2xl text-ink">{p.t}</h3>
-              <p className="mt-4 text-ink-soft">{p.d}</p>
+            <div key={p.t} className="bg-paper">
+              <div
+                className="relative aspect-[4/3] overflow-hidden"
+                style={{ background: "linear-gradient(150deg, #4a463f, #2c2a26)" }}
+              >
+                <SiteImage
+                  id={p.img}
+                  alt={p.t}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
+              <div className="px-8 py-14">
+                <h3 className="font-serif text-2xl text-ink">{p.t}</h3>
+                <p className="mt-4 text-ink-soft">{p.d}</p>
+              </div>
             </div>
           ))}
         </div>

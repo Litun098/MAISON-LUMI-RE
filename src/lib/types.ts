@@ -31,6 +31,8 @@ export interface Product {
   swatch: string;
   swatchAccent: string;
   colorName: string;
+  /** Unsplash photo IDs — the gradient swatch is the loading/fallback layer */
+  images: string[];
   /** Selectable colourways */
   colors: ColorVariant[];
   sizes: string[];

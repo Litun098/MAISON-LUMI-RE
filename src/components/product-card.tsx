@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/products";
-import { ProductSwatch } from "./product-swatch";
+import { ProductImage } from "./product-image";
 import { WishlistButton } from "./wishlist-button";
 import { useCart } from "./cart-context";
 import { useToast } from "./toast-context";
@@ -31,8 +31,9 @@ export function ProductCard({ product }: { product: Product }) {
         onMouseLeave={() => setQuickAdd(false)}
       >
         <Link href={`/shop/${product.slug}`} className="block">
-          <ProductSwatch
+          <ProductImage
             product={product}
+            showPhoto={activeColor.name === product.colors[0].name}
             swatch={activeColor.swatch}
             accent={activeColor.accent}
             label={activeColor.name}

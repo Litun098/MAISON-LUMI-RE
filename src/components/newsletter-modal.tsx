@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SiteImage } from "./site-image";
+import { SITE_IMAGES } from "@/lib/images";
 
 const STORAGE_KEY = "ml-newsletter-dismissed";
 
@@ -36,9 +38,15 @@ export function NewsletterModal() {
       <div className="absolute inset-0 bg-ink/40 backdrop-blur-sm" onClick={dismiss} />
       <div className="relative grid w-full max-w-3xl overflow-hidden bg-paper shadow-2xl sm:grid-cols-2">
         <div
-          className="hidden min-h-[22rem] sm:block"
+          className="relative hidden min-h-[22rem] overflow-hidden sm:block"
           style={{ background: "linear-gradient(150deg, #4a463f, #2c2a26)" }}
-        />
+        >
+          <SiteImage
+            id={SITE_IMAGES.newsletter}
+            alt="Maison Lumière editorial still life"
+            sizes="(min-width: 640px) 24rem, 0px"
+          />
+        </div>
         <div className="relative px-8 py-12">
           <button
             onClick={dismiss}

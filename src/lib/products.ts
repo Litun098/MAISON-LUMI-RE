@@ -47,6 +47,7 @@ export const products: Product[] = [
     swatch: "#2c2a26",
     swatchAccent: "#4a463f",
     colorName: "Espresso",
+    images: ["1434389677669-e08b4cac3105", "1542295669297-4d352b042bca"],
     colors: [
       { name: "Espresso", swatch: "#2c2a26", accent: "#4a463f" },
       { name: "Camel", swatch: "#b8a888", accent: "#9c8d6f" },
@@ -88,6 +89,7 @@ export const products: Product[] = [
     swatch: "#1f2933",
     swatchAccent: "#3c4a57",
     colorName: "Midnight",
+    images: ["1503342217505-b0a15ec3261c", "1507003211169-0a1dd7228f2d"],
     colors: [
       { name: "Midnight", swatch: "#1f2933", accent: "#3c4a57" },
       { name: "Charcoal", swatch: "#33312e", accent: "#4f4c47" },
@@ -124,6 +126,7 @@ export const products: Product[] = [
     swatch: "#e7e1d4",
     swatchAccent: "#cfc6b2",
     colorName: "Ivoire",
+    images: ["1576566588028-4147f3842f27", "1602810318383-e386cc2a3ccf"],
     colors: [
       { name: "Ivoire", swatch: "#e7e1d4", accent: "#cfc6b2" },
       { name: "Noir", swatch: "#1f1f21", accent: "#39393d" },
@@ -156,6 +159,7 @@ export const products: Product[] = [
     swatch: "#3a1f29",
     swatchAccent: "#5e3340",
     colorName: "Bordeaux",
+    images: ["1595777457583-95e059d581b8", "1566174053879-31528523f8ae"],
     colors: [
       { name: "Bordeaux", swatch: "#3a1f29", accent: "#5e3340" },
       { name: "Encre", swatch: "#191a1d", accent: "#2f3136" },
@@ -187,6 +191,7 @@ export const products: Product[] = [
     swatch: "#f2efe9",
     swatchAccent: "#dcd6c9",
     colorName: "Blanc",
+    images: ["1591047139829-d91aecb6caea", "1521572163474-6864f9cf17ab"],
     colors: [
       { name: "Blanc", swatch: "#f2efe9", accent: "#dcd6c9" },
       { name: "Ciel", swatch: "#cdd8e0", accent: "#b3c2cd" },
@@ -219,6 +224,7 @@ export const products: Product[] = [
     swatch: "#36332b",
     swatchAccent: "#54503f",
     colorName: "Olive",
+    images: ["1611312449408-fcece27cdbb7", "1473966968600-fa801b869a1a"],
     colors: [
       { name: "Olive", swatch: "#36332b", accent: "#54503f" },
       { name: "Charcoal", swatch: "#2f2e2c", accent: "#4a4844" },
@@ -249,6 +255,7 @@ export const products: Product[] = [
     swatch: "#b8a888",
     swatchAccent: "#9c8d6f",
     colorName: "Sable",
+    images: ["1469334031218-e382a71b716b", "1620799140408-edc6dcb6d633"],
     colors: [
       { name: "Sable", swatch: "#b8a888", accent: "#9c8d6f" },
       { name: "Noir", swatch: "#1a1a1c", accent: "#34343a" },
@@ -278,6 +285,7 @@ export const products: Product[] = [
     swatch: "#43352a",
     swatchAccent: "#5f4c3c",
     colorName: "Tabac",
+    images: ["1544022613-e87ca75a784a", "1591561954557-26941169b49e"],
     colors: [
       { name: "Tabac", swatch: "#43352a", accent: "#5f4c3c" },
       { name: "Brume", swatch: "#9aa0a6", accent: "#7e858c" },
@@ -307,6 +315,7 @@ export const products: Product[] = [
     swatch: "#2b3a33",
     swatchAccent: "#46544b",
     colorName: "Sapin",
+    images: ["1554412933-514a83d2f3c8", "1572804013427-4d7ca7268217"],
     colors: [
       { name: "Sapin", swatch: "#2b3a33", accent: "#46544b" },
       { name: "Blanc", swatch: "#f2efe9", accent: "#dcd6c9" },
@@ -337,6 +346,7 @@ export const products: Product[] = [
     swatch: "#23211e",
     swatchAccent: "#3d3a34",
     colorName: "Noir",
+    images: ["1434389677669-e08b4cac3105", "1469334031218-e382a71b716b"],
     colors: [
       { name: "Noir", swatch: "#23211e", accent: "#3d3a34" },
       { name: "Cognac", swatch: "#5a3923", accent: "#7a4f30" },
@@ -368,6 +378,7 @@ export const products: Product[] = [
     swatch: "#9aa0a6",
     swatchAccent: "#7e858c",
     colorName: "Brume",
+    images: ["1576566588028-4147f3842f27", "1602810318383-e386cc2a3ccf"],
     colors: [
       { name: "Brume", swatch: "#9aa0a6", accent: "#7e858c" },
       { name: "Ivoire", swatch: "#e7e1d4", accent: "#cfc6b2" },
@@ -399,6 +410,7 @@ export const products: Product[] = [
     swatch: "#191a1d",
     swatchAccent: "#2f3136",
     colorName: "Encre",
+    images: ["1503342217505-b0a15ec3261c", "1507003211169-0a1dd7228f2d"],
     colors: [
       { name: "Encre", swatch: "#191a1d", accent: "#2f3136" },
       { name: "Bordeaux", swatch: "#3a1f29", accent: "#5e3340" },

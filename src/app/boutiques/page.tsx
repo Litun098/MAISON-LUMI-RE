@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SiteImage } from "@/components/site-image";
+import { SITE_IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Boutiques",
@@ -58,6 +60,13 @@ export default function BoutiquesPage() {
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(160deg, #2c2a26, #1f2933 90%)" }}
+        />
+        <SiteImage
+          id={SITE_IMAGES.boutiquesHero}
+          alt="Interior of a Maison Lumière boutique"
+          priority
+          sizes="100vw"
+          scrim="linear-gradient(180deg, rgba(20,20,22,0.25) 0%, rgba(20,20,22,0.35) 40%, rgba(20,20,22,0.7) 100%)"
         />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-14">
           <p className="eyebrow !text-paper/60">Visit us</p>
